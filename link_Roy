@@ -1,0 +1,49 @@
+from tkinter import *
+import webbrowser
+import tkinter.messagebox as msgbox
+import csv
+import os
+
+window = Tk()
+window.title("ROY TOP 3 DIRECT LINK")
+window.geometry("320x480")
+
+# Information Section (Frame, Label, variable)
+title_frame = Frame(window)
+title_frame.pack(fill='x')
+
+title = '''
+        [Top 3 Sites]
+'''
+label_var = Label(title_frame, text=title)
+label_var.pack(side="top")
+# Radio Buttons Section (Frame, Radio buttons - grid (pack x), variable) # .grid(row=n , column= m)
+rdbt_frame = Frame(window, relief='solid', bd=1)
+rdbt_frame.pack()
+rdbt_amazon = Radiobutton(text = "Amazon", value=1)
+rdbt_amazon.pack()
+rdbt_naver = Radiobutton(text = "Naver", value=2)
+rdbt_naver.pack()
+rdbt_google = Radiobutton(text = "Google", value=3)
+rdbt_google.pack()
+
+# Link Path Section (Label Frame, Label(label text are random but do it if you can))
+lframe = LabelFrame(window, text="Direct Link")
+lframe.pack()
+label = Label(lframe, text= "link")
+label.pack()
+# Open btn Section (Frame, two btn, def pass)
+btn_frame = Frame(window)
+btn_frame.pack()
+open = Button(btn_frame, text="Open")
+open.pack(side="left")
+change = Button(btn_frame, text="Change Link")
+change.pack(side="right")
+
+# Save & Exit button (btn, command=quit)
+save_close = Button(window, text="Save & Close")
+save_close.pack(side="bottom")
+## Tip
+# webbrowser.open("target_url")
+
+window.mainloop()
